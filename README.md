@@ -30,5 +30,5 @@ Zoom and Pan: Zoom in and out of images and pan across the viewport for detailed
 
 cd gis-web-app
 
-# Run the application
+#Run the application
 python Gisapp.py
