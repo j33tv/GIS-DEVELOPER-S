@@ -1,5 +1,6 @@
 # GIS-DEVELOPER-S
-Application 1
+# Application 1
+
 This web application is designed for Geographic Information System (GIS) functionalities, allowing users to visualize, edit, and search for spatial data. It utilizes the Leaflet library for interactive maps and includes features like drawing, editing, and searching for locations.
 
 Features
@@ -12,8 +13,11 @@ Leaflet library
 Leaflet Draw plugin
 Esri Leaflet plugin
 Esri Leaflet Geocoder plugin
-Raster Viewer
-Application 2
+
+# RASTER VIEWER
+
+# Application 2
+
 Raster Viewer is a simple application designed to view raster images and shapefiles conveniently. This README provides an overview of the application, its features, and instructions for installation and usage.
 
 Features
