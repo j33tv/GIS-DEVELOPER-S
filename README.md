@@ -25,9 +25,10 @@ View Raster Images: Load and view raster images in various formats.
 Display Shapefiles: Overlay shapefiles on raster images for visualization.
 User-Friendly Interface: Intuitive user interface for easy navigation and interaction.
 Zoom and Pan: Zoom in and out of images and pan across the viewport for detailed examination.
-##For Application 1
+
+## For Application 1
 
 cd gis-web-app
 
-#Run the application
-python app.py
+# Run the application
+python Gisapp.py
