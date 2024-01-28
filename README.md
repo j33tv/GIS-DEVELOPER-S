@@ -4,11 +4,14 @@
 This web application is designed for Geographic Information System (GIS) functionalities, allowing users to visualize, edit, and search for spatial data. It utilizes the Leaflet library for interactive maps and includes features like drawing, editing, and searching for locations.
 
 Features
-Interactive map with different base layers (OpenStreetMap and Satellite Imagery).
-Drawing tools for adding points, lines, polygons, rectangles, and circles to the map.
-Editing tools for modifying drawn features.
-Search functionality to find locations based on the address.
+
+.Interactive map with different base layers (OpenStreetMap and Satellite Imagery).
+.Drawing tools for adding points, lines, polygons, rectangles, and circles to the map.
+.Editing tools for modifying drawn features.
+.Search functionality to find locations based on the address.
+
 Prerequisites
+
 Leaflet library
 Leaflet Draw plugin
 Esri Leaflet plugin
