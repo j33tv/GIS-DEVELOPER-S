@@ -29,7 +29,7 @@ This repository contains the source code for a GIS Web App that allows users to 
 
 
 1. Open the HTML File:
-   - Open the index.html file in your preferred web browser.
+   - Open the gis.html file in your preferred web browser.
 
 2. Interact with the App:
    - Explore the map, switch between base maps, and use the drawing tools.
@@ -69,10 +69,10 @@ This repository contains RasterViewer.ipynb which provide interactive graphical 
 
 ### How to Use
 
-1. Run the RasterViewer.py script.
-2. Click "Load Raster" to select a TIFF file.
-3. Explore different band combinations and apply filters or transformations.
-4. Use the zoom and pan functionalities for detailed examination.
+
+1. Click "Load Raster" to select a TIFF file.
+2. Explore different band combinations and apply filters or transformations.
+3. Use the zoom and pan functionalities for detailed examination.
 
 ## Shape file(.shp) upload
 
@@ -91,7 +91,7 @@ This repository contains RasterViewer.ipynb which provide interactive graphical 
 
 ### How to Use
 
-1. Run the GISViewer.py script.
+1. Run the  script.
 2. Click "Load Shapefile" to select a shapefile.
 3. Visualize the shapefile data on the map.
 4. Click "Show Attribute Chart" to explore attribute distribution.
