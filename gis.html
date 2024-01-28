@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIS Web App</title>
+    <!-- Include Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw"></script>
+    <script src="https://unpkg.com/esri-leaflet"></script>
+    <script src="https://unpkg.com/esri-leaflet-geocoder"></script>
+
+    <style>
+        #map {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Add a search bar -->
+    <input type="text" id="search" placeholder="Search for address">
+
+    <!-- Add file input for spatial data upload -->
+    <input type="file" id="fileInput" accept=".geojson, .kml, .shp" onchange="handleFile()">
+
+    <script>
+        // Initialize Leaflet map
+        var map = L.map('map').setView([0, 0], 2);
+
+        // Add base maps
+        var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var satelliteLayer = L.esri.basemapLayer('Imagery').addTo(map);
+
+        // Layer control
+        var baseMaps = {
+            "OpenStreetMap": osmLayer,
+            "Satellite": satelliteLayer
+        };
+        L.control.layers(baseMaps).addTo(map);
+
+        // Add draw control for editing features
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+        var drawControl = new L.Control.Draw({
+            draw: {
+                polygon: true,
+                marker: true,
+                polyline: true,
+                rectangle: true,
+                circle: true
+            },
+            edit: {
+                featureGroup: drawnItems
+            }
+        });
+        map.addControl(drawControl);
+
+        // Add search functionality
+        var searchControl = L.Control.geocoder({
+            geocoder: L.Control.Geocoder.esri()
+        }).addTo(map);
+
+        document.getElementById('search').addEventListener('input', function(e) {
+            searchControl.geocode(e.target.value);
+        });
+
+        // Event handlers for editing features
+        map.on('draw:created', function(e) {
+            drawnItems.addLayer(e.layer);
+        });
+
+        map.on('draw:edited', function(e) {
+            // Handle edited features
+        });
+
+        map.on('draw:deleted', function(e) {
+            // Handle deleted features
+        });
+
+        // Function to handle file upload
+        function handleFile() {
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    // Parse the uploaded file (GeoJSON, KML, or Shapefile) and add it to the map
+                    var geojsonData = JSON.parse(e.target.result);
+                    L.geoJSON(geojsonData).addTo(map);
+                };
+
+                reader.readAsText(file);
+            }
+        }
+    </script>
+</body>
+</html>
