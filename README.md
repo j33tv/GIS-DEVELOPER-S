@@ -5,7 +5,7 @@ This web application is designed for Geographic Information System (GIS) functio
 
 Features
 
-. Interactive map with different base layers (OpenStreetMap and Satellite Imagery).
+.Interactive map with different base layers (OpenStreetMap and Satellite Imagery).
 
 .Drawing tools for adding points, lines, polygons, rectangles, and circles to the map.
 
@@ -17,9 +17,13 @@ Features
 Prerequisites
 
 Leaflet library
+
 Leaflet Draw plugin
+
 Esri Leaflet plugin
+
 Esri Leaflet Geocoder plugin
+
 
 # RASTER VIEWER
 
